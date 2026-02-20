@@ -1,8 +1,8 @@
 ﻿using Flashcard.Entities.Abstract;
 
-namespace Flashcard.Entities
+namespace Flashcard.Entities.Concrete
 {
-    public class Word:IEntity
+    public class Word: IEntity
     {
         public int Id { get; set; } // Birincil anahtar
         public string OriginalText { get; set; } // İtalyanca kelime

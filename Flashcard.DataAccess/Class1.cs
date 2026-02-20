@@ -1,7 +1,7 @@
-﻿using Flashcard.Entities;
-using Microsoft.EntityFrameworkCore.SqlServer;
+﻿using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Tools;
+using Flashcard.Entities.Concrete;
 
 namespace Flashcard.DataAccess
 

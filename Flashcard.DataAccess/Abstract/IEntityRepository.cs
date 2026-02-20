@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Flashcard.Entities.Abstract;
+using Flashcard.Entities.Concrete;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace Flashcard.DataAccess.Abstract

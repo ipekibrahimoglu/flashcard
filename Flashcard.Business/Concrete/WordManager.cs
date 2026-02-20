@@ -6,10 +6,10 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 using Flashcard.Business.Abstract;
 using Flashcard.DataAccess.Abstract;
-using Flashcard.Entities;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using System.Linq.Expressions;
+using Flashcard.Entities.Concrete;
 
 namespace Flashcard.Business.Concrete
 {
@@ -43,7 +43,7 @@ namespace Flashcard.Business.Concrete
 
         public void Update(Word word)
         {
-            throw new NotImplementedException();
+            _wordDal.Update(word);
         }
     }
 }
