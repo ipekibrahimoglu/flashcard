@@ -10,6 +10,9 @@ using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using System.Linq.Expressions;
 using Flashcard.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 
 namespace Flashcard.Business.Concrete
 {
@@ -26,9 +29,21 @@ namespace Flashcard.Business.Concrete
             _wordDal.Add(word);
         }
 
-        public void Delete(Word word)
+        public object Delete(Word word)
+
         {
-            _wordDal.Delete(word);
+            var wordToDelete = _wordDal.Get(w => w.Id == word.Id);
+
+            if (wordToDelete != null)
+            {
+
+                _wordDal.Delete(wordToDelete);
+
+                return new { Success = true, message = "başarılı" };
+
+            }
+
+            return new { Success = false, message = "başarısız, silinmedi" };
         }
 
         public List<Word> GetAll()
@@ -44,6 +59,11 @@ namespace Flashcard.Business.Concrete
         public void Update(Word word)
         {
             _wordDal.Update(word);
+        }
+
+        void IWordService.Delete(Word word)
+        {
+            throw new NotImplementedException();
         }
     }
 }

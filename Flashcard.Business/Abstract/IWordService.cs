@@ -12,7 +12,7 @@ namespace Flashcard.Business.Abstract
         List<Word> GetAll();
         Word GetById(int id);
         void Add(Word word);
-        void Delete(Word word);
+        object Delete(Word word);
         void Update(Word word);
 
            

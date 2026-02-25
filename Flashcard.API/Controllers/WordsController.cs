@@ -18,9 +18,9 @@ namespace Flashcard.API.Controllers
         [HttpPost("Add")]
         public void Add(Word word)
         {
-           
-            if(_wordService != null)
-            _wordService.Add(word);
+
+            if (_wordService != null)
+                _wordService.Add(word);
         }
 
 
@@ -46,13 +46,25 @@ namespace Flashcard.API.Controllers
 
         [HttpDelete("delete/{id}")]
 
-        public void Delete(Word word)
+        public void Delete(int id)
 
         {
-            _wordService.Delete(word);
+           var word = _wordService.GetById(id);
+
+            if (word != null) {
+
+                dynamic result = _wordService.Delete(word);
+
+                if (
+
+             }
 
         }
-       
 
+        [HttpPut("Update")]
+        public void {
+            
+
+        }
     }
 }
