@@ -13,6 +13,7 @@ using Flashcard.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
+using Core.Utilities.Results;
 
 namespace Flashcard.Business.Concrete
 {
@@ -20,6 +21,8 @@ namespace Flashcard.Business.Concrete
 
     {
         private readonly IWordDal _wordDal;
+
+
         public WordManager(IWordDal wordDal) {
 
                 _wordDal = wordDal;       
@@ -29,22 +32,22 @@ namespace Flashcard.Business.Concrete
             _wordDal.Add(word);
         }
 
-        public object Delete(Word word)
+        public Core.Utilities.Results.IResult Delete(Word word)
 
         {
             var wordToDelete = _wordDal.Get(w => w.Id == word.Id);
 
-            if (wordToDelete != null)
+            if (wordToDelete = null)
             {
+           
 
-                _wordDal.Delete(wordToDelete);
 
-                return new { Success = true, message = "başarılı" };
+             _wordDal.Delete(wordToDelete);
 
             }
 
-            return new { Success = false, message = "başarısız, silinmedi" };
-        }
+            return new ErrorResult("kelime bulunamadı")
+;        }
 
         public List<Word> GetAll()
         {
@@ -61,7 +64,7 @@ namespace Flashcard.Business.Concrete
             _wordDal.Update(word);
         }
 
-        void IWordService.Delete(Word word)
+        object IWordService.Delete(Word word)
         {
             throw new NotImplementedException();
         }

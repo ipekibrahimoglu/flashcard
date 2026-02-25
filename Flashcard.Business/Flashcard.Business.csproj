@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Flashcard.DataAccess\Flashcard.DataAccess.csproj" />
     <ProjectReference Include="..\Flashcard.Entities\Flashcard.Entities.csproj" />
   </ItemGroup>
