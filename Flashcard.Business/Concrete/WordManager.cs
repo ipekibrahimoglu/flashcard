@@ -32,22 +32,22 @@ namespace Flashcard.Business.Concrete
             _wordDal.Add(word);
         }
 
-        public Core.Utilities.Results.IResult Delete(Word word)
+        public Core.Utilities.Results.IResult Delete(int id)
 
         {
-            var wordToDelete = _wordDal.Get(w => w.Id == word.Id);
+            var wordToDelete = _wordDal.Get(w => w.Id == id);
 
-            if (wordToDelete = null)
+            if (wordToDelete == null)
             {
-           
-
-
-             _wordDal.Delete(wordToDelete);
+                return new ErrorResult("kelime bulunamadı");
 
             }
 
-            return new ErrorResult("kelime bulunamadı")
-;        }
+            _wordDal.Delete(wordToDelete);
+
+            return new SuccessResult("silme başarılı");
+        }
+        
 
         public List<Word> GetAll()
         {
@@ -64,9 +64,6 @@ namespace Flashcard.Business.Concrete
             _wordDal.Update(word);
         }
 
-        object IWordService.Delete(Word word)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

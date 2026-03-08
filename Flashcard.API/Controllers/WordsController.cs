@@ -46,10 +46,10 @@ namespace Flashcard.API.Controllers
 
         [HttpDelete("delete/{id}")]
 
-        public void Delete(int id)
+        public IActionResult Delete(int id)
 
         {
-           var word = _wordService.GetById(id);
+           var result = _wordService.Delete(id);
 
             if (word != null) {
 

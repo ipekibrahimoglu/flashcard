@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Utilities.Results;
 using Flashcard.Entities.Concrete;
 
 namespace Flashcard.Business.Abstract
@@ -11,9 +12,9 @@ namespace Flashcard.Business.Abstract
     {
         List<Word> GetAll();
         Word GetById(int id);
-        void Add(Word word);
-        object Delete(Word word);
-        void Update(Word word);
+        IResult Add(Word word);
+        IResult Delete(int id);
+        IResult Update(Word word);
 
            
     }
