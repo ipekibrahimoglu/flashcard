@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çöz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{CEF8D49C-D156-4F14-9EA9-BDED96A76223}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCardUnitTests", "FlashCardUnitTests\FlashCardUnitTests.csproj", "{D350DA6F-3378-43F8-9F4B-198128A71D2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{CEF8D49C-D156-4F14-9EA9-BDED96A76223}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF8D49C-D156-4F14-9EA9-BDED96A76223}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEF8D49C-D156-4F14-9EA9-BDED96A76223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D350DA6F-3378-43F8-9F4B-198128A71D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D350DA6F-3378-43F8-9F4B-198128A71D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D350DA6F-3378-43F8-9F4B-198128A71D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D350DA6F-3378-43F8-9F4B-198128A71D2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

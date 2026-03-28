@@ -51,19 +51,26 @@ namespace Flashcard.API.Controllers
         {
            var result = _wordService.Delete(id);
 
-            if (word != null) {
+            if (result != null) {
 
-                dynamic result = _wordService.Delete(word);
-
-                if (
+                return Ok(result);
 
              }
 
+            return NotFound("kelime silinemedi");
+
         }
 
-        [HttpPut("Update")]
-        public void {
-            
+        [HttpPut("Update/{id}")]
+        public IActionResult Update (int id, Word word)
+        {
+            var result = _wordService.Update(word);
+
+            if (result != null) {
+                return Ok(result);
+
+        }
+            return BadRequest(result);    
 
         }
     }

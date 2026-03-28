@@ -23,13 +23,35 @@ namespace Flashcard.Business.Concrete
         private readonly IWordDal _wordDal;
 
 
-        public WordManager(IWordDal wordDal) {
-
-                _wordDal = wordDal;       
-        }    
-        public void Add(Word word)
+        public WordManager(IWordDal wordDal)
         {
-            _wordDal.Add(word);
+
+            _wordDal = wordDal;
+        }
+        public Core.Utilities.Results.IResult Add(Word word)
+        {
+            var result = _wordDal.Get(w => w.OriginalText.ToLower() == word.OriginalText.ToLower());
+
+            if (result != null)
+            {
+
+                return new ErrorResult("kelime zaten var");
+
+            }
+
+            if (string.IsNullOrEmpty(word.OriginalText))
+            {
+
+                return new ErrorResult("boş kelime eklenemez");
+
+
+            }
+
+            _wordDal.Add(word);//nasıl kontrol yapılmalı ?
+
+            return new SuccessResult("eklendi");
+
+
         }
 
         public Core.Utilities.Results.IResult Delete(int id)
@@ -47,23 +69,42 @@ namespace Flashcard.Business.Concrete
 
             return new SuccessResult("silme başarılı");
         }
-        
+
 
         public List<Word> GetAll()
         {
-          return _wordDal.GetAll();
+            return _wordDal.GetAll();
+
         }
 
         public Word GetById(int id)
         {
-           return _wordDal.Get(w => w.Id == id);
+            return _wordDal.Get(w => w.Id == id);
         }
 
-        public void Update(Word word)
+        public Core.Utilities.Results.IResult Update(Word word)
         {
-            _wordDal.Update(word);
-        }
+            var result = _wordDal.Get(w => w.Id == word.Id);
+            if (result == null)
+            {
 
-        
+                return new ErrorResult("güncellenecek kelime bulunmadı");
+
+            }
+
+            if (word.OriginalText.Length < 2)
+            {
+
+                return new ErrorResult("2 harften uzun bir kelime gerekli");
+
+            }
+
+            _wordDal.Update(word);
+
+            return new SuccessResult("kelime başarıyla güncellendi");
+
+
+        }
     }
 }
+    
