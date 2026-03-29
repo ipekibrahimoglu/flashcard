@@ -8,7 +8,7 @@ namespace Flashcard.Entities.Concrete
         public string OriginalText { get; set; } // İtalyanca kelime
         public string Translation { get; set; } // Türkçe anlamı
         public string Language { get; set; }
-                                            
+        public int LanguageId { get; set; }
 
     }
 }

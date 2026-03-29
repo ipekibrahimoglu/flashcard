@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Microsoft.Analytics.Interfaces;
-using Microsoft.Analytics.Types.Sql;
+using Flashcard.Entities.Abstract;
+
 
 namespace Flashcard.Entities.Concrete
 {
-    internal class Language
+    public class Language:IEntity
     {
+        public int LanguageId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
     }
 }

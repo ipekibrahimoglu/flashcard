@@ -14,6 +14,8 @@ namespace Flashcard.DataAccess
         }
 
         public DbSet<Word>Words { get; set; }   
+
+        public DbSet<Language> Languages { get; set; }
         
     }
 }
