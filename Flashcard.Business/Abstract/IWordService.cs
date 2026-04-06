@@ -11,9 +11,13 @@ namespace Flashcard.Business.Abstract
     public interface IWordService
     {
         List<Word> GetAll();
+
         Word GetById(int id);
+
         IResult Add(Word word);
+
         IResult Delete(int id);
+
         IResult Update(Word word);
 
            

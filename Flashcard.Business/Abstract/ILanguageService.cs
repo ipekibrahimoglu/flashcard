@@ -14,6 +14,14 @@ namespace Flashcard.Business.Abstract
 
         IResult Add(Language language);
 
+        IResult Update(Language language);
+
+        IResult Delete(Language language);
+
+        List<Language> GetLanguages();
+
+        Language GetLanguage(int languageId);
+
 
 
 
