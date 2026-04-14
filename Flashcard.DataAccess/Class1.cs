@@ -12,7 +12,11 @@ namespace Flashcard.DataAccess
         {
             optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb;Database = FlashCardDB;Trusted_Connection = True");
         }
-
+        // 💡 HATIRLATICI: @ işareti \ kaçış karakterini iptal eder. 
+        // Sıralama: Nerede? (Server) + Hangisi? (Database) + Güvenlik? (Trusted)
+        // Server=(localdb)\mssqllocaldb -> Bilgisayarımdaki yerel SQL adresi
+        // Database=FlashCardDB -> Veritabanı kutusunun adı
+        // Trusted_Connection=true -> Windows kullanıcım ile şifresiz gir.
         public DbSet<Word>Words { get; set; }   
 
         public DbSet<Language> Languages { get; set; }

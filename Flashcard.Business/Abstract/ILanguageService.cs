@@ -22,9 +22,5 @@ namespace Flashcard.Business.Abstract
 
         Language GetLanguage(int languageId);
 
-
-
-
-
     }
 }
